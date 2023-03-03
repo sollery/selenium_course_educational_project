@@ -2,6 +2,7 @@ import time
 
 from pages.cart_page import CartPage
 from pages.client_info_page import ClientInfoPage
+from pages.finish_page import FinishPage
 from pages.main_page import MainPage
 from pages.payment_page import PaymentPage
 from selenium import webdriver
@@ -35,6 +36,7 @@ def test_buy_product():
     payment_page = PaymentPage(driver)
     payment_page.payment()
 
-
+    finish_page = FinishPage(driver)
+    finish_page.get_screenshot()
     time.sleep(10)
 
