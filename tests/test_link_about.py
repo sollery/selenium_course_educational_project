@@ -14,8 +14,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from pages.login_page import Login_page
 from selenium.webdriver.chrome.options import Options
 
-
-def test_buy_product():
+def test_link_about():
     options = Options()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
     g = Service('C:\\resource\\chromedriver.exe')
@@ -25,25 +24,7 @@ def test_buy_product():
     login.authorization()
 
     main_page = MainPage(driver)
-    main_page.select_product()
-
-    cart = CartPage(driver)
-    cart.product_confirmation()
-
-    client_info_page = ClientInfoPage(driver)
-    client_info_page.input_information()
-
-    payment_page = PaymentPage(driver)
-    payment_page.payment()
-
-    finish_page = FinishPage(driver)
-    finish_page.get_screenshot()
+    main_page.select_menu_about()
     time.sleep(10)
     driver.quit()
-
-
-
-
-
-
 

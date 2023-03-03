@@ -28,5 +28,6 @@ class Base:
 
     def assert_url(self, result):
         get_url = self.driver.current_url
-        assert get_url == result
+        print(get_url)
+        assert get_url == result,f'{get_url}'
         print("Good value url")
