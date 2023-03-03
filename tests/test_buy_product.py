@@ -1,6 +1,7 @@
 import time
 
 from pages.cart_page import CartPage
+from pages.client_info_page import ClientInfoPage
 from pages.main_page import MainPage
 from selenium import webdriver
 from selenium.common import NoSuchElementException, TimeoutException
@@ -12,7 +13,7 @@ from pages.login_page import Login_page
 from selenium.webdriver.chrome.options import Options
 
 
-def test_authorization():
+def test_buy_product():
     options = Options()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
     g = Service('C:\\resource\\chromedriver.exe')
@@ -23,5 +24,7 @@ def test_authorization():
     main_page.select_product()
     cart = CartPage(driver)
     cart.product_confirmation()
+    client_info_page = ClientInfoPage(driver)
+    client_info_page.input_information()
     time.sleep(10)
 
